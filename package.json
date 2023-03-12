@@ -1,5 +1,5 @@
 {
-  "name": "@wessberg/di-vite-playground",
+  "name": "wessberg-di-vite-playground",
   "type": "module",
   "private": true,
   "license": "MIT",

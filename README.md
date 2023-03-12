@@ -1,4 +1,4 @@
-# vite-ts-nodejs-vitest-playground
+# wessberg-di-vite-playground
 
 To debug:
 

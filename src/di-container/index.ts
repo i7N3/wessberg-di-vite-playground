@@ -19,5 +19,5 @@ container.registerSingleton<Logger, ConsoleLogger>();
 
 export const diEntry = (): void => {
   const logger = container.get<Logger>();
-  logger.log('log here');
+  logger.log('Hello world');
 };
