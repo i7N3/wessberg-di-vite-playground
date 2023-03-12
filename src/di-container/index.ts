@@ -1,23 +1,28 @@
 // https://github.com/wessberg/DI
 import { DIContainer } from '@wessberg/di';
 
+import { Counter } from '../counter';
+import { ConsoleLogger, type Logger } from '../logger';
+
 // container:
 // - knows which objects with which interfaces are required by each of the modules
 // - knows which objects these interfaces implement
 // - creates and injects automatically dependencies into modules
 const container = new DIContainer();
 
-interface Logger {
-  log(message: string): void;
-}
-
-export class ConsoleLogger implements Logger {
-  public log = (message: string): void => console.log(message);
-}
+// https://bespoyasov.me/blog/di-ts-in-practice/
 
 container.registerSingleton<Logger, ConsoleLogger>();
 
-export const diEntry = (): void => {
-  const logger = container.get<Logger>();
-  logger.log('Hello world');
+const counterWithManualInjection = new Counter(console);
+
+export const manualDi = (): void => {
+  counterWithManualInjection.sayHello('manual');
+};
+
+container.registerSingleton<Counter>();
+
+export const automaticDi = (): void => {
+  const counterServiceWithAutoInjection = container.get<Counter>();
+  counterServiceWithAutoInjection.sayHello('automatic');
 };

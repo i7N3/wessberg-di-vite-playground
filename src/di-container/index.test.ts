@@ -1,8 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import { diEntry } from '.';
+import { manualDi, automaticDi } from '.';
 
 describe('di-container', () => {
   it('sample', () => {
-    expect(diEntry()).toBeUndefined();
+    expect(manualDi()).toBeUndefined();
+    expect(automaticDi()).toBeUndefined();
   });
 });
