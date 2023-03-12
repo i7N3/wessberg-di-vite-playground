@@ -1,0 +1,26 @@
+{
+  "name": "@wessberg/di-vite-playground",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run"
+  },
+  "devDependencies": {
+    "@vitest/ui": "latest",
+    "prettier": "^2.8.4",
+    "typescript": "^4.7.4",
+    "vite": "^2.9.9",
+    "vitest": "latest",
+    "@wessberg/di-compiler": "^3.2.0",
+    "rollup-plugin-ts": "^3.2.0"
+  },
+  "stackblitz": {
+    "startCommand": "npm run test"
+  },
+  "dependencies": {
+    "@wessberg/di": "^2.1.0"
+  }
+}
